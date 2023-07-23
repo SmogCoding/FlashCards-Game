@@ -1,3 +1,4 @@
+# Stores the users native words as keys and non native as values
 flashcards = {}
 
 
