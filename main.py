@@ -40,10 +40,6 @@ def get_non_native_word():
             print("Please enter a valid word")
 
 
-# Get the number of words to guess
-num_of_words = get_num_words()
-
-
 def get_flashcards_words(num_words):
     '''
     Function gets the native and non-native languages from the user to be stored in the
@@ -60,7 +56,14 @@ def get_flashcards_words(num_words):
             flashcards[native_language] = non_native_language
 
 
-get_flashcards_words(num_of_words)
-print(flashcards)
+def main():
+    # Get the number of words to guess
+    num_of_words = get_num_words()
+    get_flashcards_words(num_of_words)
+    print("Flashcards Successfully Created")
+
+
+main()
+
 
 # Implements the quiz mode to allow users to be able to study, and practice. Keep score as well
