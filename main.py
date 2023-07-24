@@ -47,11 +47,11 @@ def get_non_native_word():
             print("Please enter a valid word")
 
 
-def get_flashcards_words(num_words):
+def create_flashcards():
     '''
-    Function gets the native and non-native languages from the user to be stored in the
-    flashcard data structure.
+    Function allows a user to create their own flashcards
     '''
+    num_words = get_num_words()
     for _ in range(num_words):
         native_language = get_native_word()
         non_native_language = get_non_native_word()
@@ -62,13 +62,24 @@ def get_flashcards_words(num_words):
         else:
             flashcards[native_language] = non_native_language
 
+    print("Flashcards has successfully been created!!")
+
 
 def main():
-    # Get the number of words to guess
-    num_of_words = get_num_words()
-    get_flashcards_words(num_of_words)
-    print("Flashcards Successfully Created")
-    display_flashcards(flashcards)
+    while True:
+        print("\n======== FLASHCARD PROGRAM ========\n")
+        print("1.Create your Flashcards")
+        print("2. Display your Flashcards")
+        print("5. Quit Program")
+
+        user_choice = input("Please select an option: ")
+
+        if user_choice == "5":
+            break
+        elif user_choice == "1":
+            create_flashcards()
+        elif user_choice == "2":
+            display_flashcards(flashcards)
 
 
 main()
