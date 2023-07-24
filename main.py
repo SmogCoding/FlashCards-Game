@@ -62,3 +62,5 @@ def get_flashcards_words(num_words):
 
 get_flashcards_words(num_of_words)
 print(flashcards)
+
+# Implements the quiz mode to allow users to be able to study, and practice. Keep score as well
