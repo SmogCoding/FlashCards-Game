@@ -2,6 +2,13 @@
 flashcards = {}
 
 
+def display_flashcards(flashcards):
+    print("\n======= FLASHCARD DISPLAY =======")
+    for native, non_native in flashcards.items():
+        print(f"Native Word: {native} | Non-Native: {non_native } ")
+    print("===================================\n")
+
+
 def get_num_words():
     '''
     Function asks the user to enter how many words they want to guess
@@ -61,6 +68,7 @@ def main():
     num_of_words = get_num_words()
     get_flashcards_words(num_of_words)
     print("Flashcards Successfully Created")
+    display_flashcards(flashcards)
 
 
 main()
