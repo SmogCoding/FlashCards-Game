@@ -75,15 +75,21 @@ def generate_random_word():
 
 def quiz_mode():
     print("\n ======== BEGINNING OF QUIZ ============ \n")
+    input("If you are ready to enter the quiz please press Enter....")
     score = 0
 
     for i in range(len(flashcards)):
+        os.system("cls")
         print(f"Question: {i + 1} out of {len(flashcards)}")
         word = generate_random_word()
-        guess = input(f"What is the non-native word for {word}: ").lower()
+        guess = input(
+            f"What is the non-native word for {word}: (Or press q to quit)").lower()
 
-        if guess.strip() == flashcards[word]:
-            score = score + 1
+        if not guess.lower() == "q":
+            if guess.strip() == flashcards[word]:
+                score = score + 1
+        else:
+            break
 
     print(
         f"You have finished the quiz, and have scored {score} out of {len(flashcards)}")
