@@ -74,7 +74,7 @@ def generate_random_word():
 
 
 def quiz_mode():
-    print("\n ======== BEGINNING OF QUIZ ============ \n")
+    print("\n======== START OF QUIZ  ========\n")
     input("If you are ready to enter the quiz please press Enter....")
     score = 0
 
