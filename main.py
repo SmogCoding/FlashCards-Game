@@ -1,3 +1,6 @@
+import random
+import os
+
 # Stores the users native words as keys and non native as values
 flashcards = {}
 
@@ -65,11 +68,33 @@ def create_flashcards():
     print("Flashcards has successfully been created!!")
 
 
+def generate_random_word():
+    native_word = random.choice(list(flashcards.keys()))
+    return native_word
+
+
+def quiz_mode():
+    print("\n ======== BEGINNING OF QUIZ ============ \n")
+    score = 0
+
+    for i in range(len(flashcards)):
+        print(f"Question: {i + 1} out of {len(flashcards)}")
+        word = generate_random_word()
+        guess = input(f"What is the non-native word for {word}: ").lower()
+
+        if guess.strip() == flashcards[word]:
+            score = score + 1
+
+    print(
+        f"You have finished the quiz, and have scored {score} out of {len(flashcards)}")
+
+
 def main():
     while True:
         print("\n======== FLASHCARD PROGRAM ========\n")
         print("1.Create your Flashcards")
-        print("2. Display your Flashcards")
+        print("2.Display your Flashcards")
+        print("3.Quiz")
         print("5. Quit Program")
 
         user_choice = input("Please select an option: ")
@@ -80,6 +105,8 @@ def main():
             create_flashcards()
         elif user_choice == "2":
             display_flashcards(flashcards)
+        elif user_choice == "3":
+            quiz_mode()
 
 
 main()
